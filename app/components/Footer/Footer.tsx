@@ -1,6 +1,7 @@
-import { Sparkles } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import neovLogo from "@/app/assets/neov logo.png";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -9,12 +10,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center">
-                <Sparkles className="h-5 w-5 text-white" />
-              </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                NEOV
-              </span>
+              <Image src={neovLogo} alt="neov-logo" width={100} height={100} />
             </div>
             <p className="text-white/70">
               Transforming businesses through innovative digital solutions and
