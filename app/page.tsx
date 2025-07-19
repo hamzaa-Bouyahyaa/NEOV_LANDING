@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import HeroSection from "./components/HeroSection/HeroSection";
 import Services from "./components/Services/Services";
 import AnimatedBackground from "./components/AnimatedBackground/AnimatedBackground";
+import About from "./components/About/About";
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   useEffect(() => {
@@ -22,6 +23,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <Services />
+      <About />
     </div>
   );
 }
