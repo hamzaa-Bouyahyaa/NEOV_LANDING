@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import aboutImage from "@/app/assets/neo-image-1.png";
 
 const About = () => {
   return (
@@ -82,7 +83,7 @@ const About = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-3xl blur-3xl"></div>
             <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8">
               <Image
-                src="/placeholder.svg?height=500&width=600"
+                src={aboutImage}
                 alt="NEOV Innovation Lab"
                 width={600}
                 height={500}

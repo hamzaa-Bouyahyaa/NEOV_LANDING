@@ -4,6 +4,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowUpRight, Layers } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import eCommerceImage from "@/app/assets/e-commerce.jpeg";
+import fintechInnovationImage from "@/app/assets/fintech innovation.webp";
+import healthCareImage from "@/app/assets/healthcare.jpg";
+import edTechImage from "@/app/assets/edtech.avif";
+import smartCityImage from "@/app/assets/smartCity.jpg";
+import aiContentImage from "@/app/assets/ai-content.webp";
 
 const Portfolio = () => {
   return (
@@ -30,6 +36,7 @@ const Portfolio = () => {
             {
               title: "E-commerce Revolution",
               category: "Retail Technology",
+              img: eCommerceImage,
               description:
                 "AI-powered shopping experience with 300% conversion boost",
               image: "futuristic ecommerce platform with AI recommendations",
@@ -39,6 +46,7 @@ const Portfolio = () => {
             {
               title: "FinTech Innovation",
               category: "Financial Services",
+              img: fintechInnovationImage,
               description:
                 "Blockchain-based trading platform with real-time analytics",
               image: "modern financial trading dashboard with charts",
@@ -48,6 +56,7 @@ const Portfolio = () => {
             {
               title: "HealthTech Platform",
               category: "Healthcare",
+              img: healthCareImage,
               description:
                 "Telemedicine platform serving 100K+ patients globally",
               image: "healthcare telemedicine app interface",
@@ -57,6 +66,7 @@ const Portfolio = () => {
             {
               title: "EdTech Revolution",
               category: "Education",
+              img: edTechImage,
               description:
                 "VR-powered learning platform with immersive experiences",
               image: "virtual reality education platform interface",
@@ -66,6 +76,7 @@ const Portfolio = () => {
             {
               title: "Smart City IoT",
               category: "Urban Technology",
+              img: smartCityImage,
               description:
                 "IoT infrastructure managing city-wide smart systems",
               image: "smart city IoT dashboard with real-time data",
@@ -75,6 +86,7 @@ const Portfolio = () => {
             {
               title: "AI Content Studio",
               category: "Creative Technology",
+              img: aiContentImage,
               description:
                 "AI-powered content creation platform for enterprises",
               image: "AI content creation studio interface",
@@ -88,7 +100,10 @@ const Portfolio = () => {
             >
               <div className="relative overflow-hidden">
                 <Image
-                  src={`/placeholder.svg?height=250&width=400&query=${project.image}`}
+                  src={
+                    project.img ||
+                    `/placeholder.svg?height=250&width=400&query=${project.image}`
+                  }
                   alt={project.title}
                   width={400}
                   height={250}

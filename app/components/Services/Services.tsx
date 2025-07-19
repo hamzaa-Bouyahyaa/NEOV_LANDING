@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import webDevImage from "@/app/assets/web-dev-image.jpg";
 
 const Services = () => {
   return (
@@ -65,7 +66,7 @@ const Services = () => {
               </div>
               <div className="relative h-40 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-2xl overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=160&width=400"
+                  src={webDevImage}
                   alt="Web Development"
                   width={400}
                   height={160}
