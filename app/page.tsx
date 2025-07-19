@@ -5,6 +5,9 @@ import HeroSection from "./components/HeroSection/HeroSection";
 import Services from "./components/Services/Services";
 import AnimatedBackground from "./components/AnimatedBackground/AnimatedBackground";
 import About from "./components/About/About";
+import Portfolio from "./components/Portfolio/Portfolio";
+import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   useEffect(() => {
@@ -24,6 +27,9 @@ export default function Home() {
       <HeroSection />
       <Services />
       <About />
+      <Portfolio />
+      <Contact />
+      <Footer />
     </div>
   );
 }
