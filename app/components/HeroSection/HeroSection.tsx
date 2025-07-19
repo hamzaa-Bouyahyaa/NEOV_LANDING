@@ -36,9 +36,9 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-xl lg:text-2xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-              We craft extraordinary digital experiences that captivate
-              audiences, drive growth, and redefine what's possible in the
-              digital realm.
+              {
+                "We craft extraordinary digital experiences that captivate audiences, drive growth, and redefine what's possible in the digital realm."
+              }
             </p>
           </div>
 

@@ -19,7 +19,7 @@ const Contact = () => {
           <div className="text-center space-y-6 mb-20">
             <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30 px-6 py-2">
               <MessageSquare className="mr-2 h-4 w-4" />
-              Let's Connect
+              {"Let's Connect"}
             </Badge>
             <h2 className="text-5xl lg:text-7xl font-black">
               <span className="bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
@@ -37,11 +37,12 @@ const Contact = () => {
             <div className="space-y-8">
               <div className="space-y-6">
                 <h3 className="text-3xl font-bold">
-                  Let's Start a Conversation
+                  {"Let's Start a Conversation"}
                 </h3>
                 <p className="text-xl text-white/70">
-                  Ready to transform your digital presence? We're here to turn
-                  your vision into reality.
+                  {
+                    "Ready to transform your digital presence? We're here to turn your vision into reality."
+                  }
                 </p>
               </div>
 

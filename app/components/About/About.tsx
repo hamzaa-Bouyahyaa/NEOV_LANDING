@@ -34,9 +34,9 @@ const About = () => {
             </h2>
 
             <p className="text-xl text-white/70 leading-relaxed">
-              Since 2015, we've been at the forefront of digital transformation,
-              helping businesses reimagine their digital presence and achieve
-              unprecedented growth through innovative technology solutions.
+              {
+                "Since 2015, we've been at the forefront of digital transformation, helping businesses reimagine their digital presence and achieve unprecedented growth through innovative technology solutions."
+              }
             </p>
 
             <div className="grid grid-cols-2 gap-8">
