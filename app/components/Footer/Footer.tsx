@@ -9,9 +9,12 @@ const Footer = () => {
       <div className="container mx-auto px-4 lg:px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
-            <div className="flex items-center space-x-3">
+            <Link
+              href=""
+              className="flex items-center space-x-3 cursor-pointer"
+            >
               <Image src={neovLogo} alt="neov-logo" width={100} height={100} />
-            </div>
+            </Link>
             <p className="text-white/70">
               Transforming businesses through innovative digital solutions and
               exceptional design experiences.
