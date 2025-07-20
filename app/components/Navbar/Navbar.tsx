@@ -75,20 +75,19 @@ const Navbar = () => {
               >
                 <div className="flex flex-col space-y-8 mt-12 px-2">
                   {/* Mobile Navigation Links */}
-                  <nav className="flex flex-col space-y-2">
+                  <nav className="flex flex-col space-y-3">
                     {navItems.map((item, index) => (
                       <Link
                         key={item}
                         href={`#${item.toLowerCase()}`}
                         onClick={handleLinkClick}
-                        className="text-white/80 hover:text-white transition-all duration-300 font-medium text-lg py-4 px-6 rounded-xl hover:bg-white/10 relative group border border-transparent hover:border-white/20 backdrop-blur-sm"
+                        className="block text-white/80 hover:text-white transition-all duration-300 font-medium text-lg py-4 px-6 rounded-xl hover:bg-white/10 border border-transparent hover:border-white/20 relative group"
                         style={{
                           animationDelay: `${index * 100}ms`,
                         }}
                       >
-                        <span className="relative z-10">{item}</span>
-                        <span className="absolute bottom-2 left-6 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 group-hover:w-12 transition-all duration-500 ease-out"></span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <span className="block">{item}</span>
+                        {/* <span className="absolute bottom-1 left-6 right-6 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span> */}
                       </Link>
                     ))}
                   </nav>
@@ -110,13 +109,6 @@ const Navbar = () => {
                       <ArrowRight className="ml-3 h-5 w-5" />
                     </Button>
                   </div>
-
-                  {/* Decorative gradient orb */}
-                  <div className="absolute top-20 right-8 w-32 h-32 bg-gradient-to-br from-purple-500/20 to-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
-                  <div
-                    className="absolute bottom-32 left-8 w-24 h-24 bg-gradient-to-br from-cyan-500/15 to-purple-500/15 rounded-full blur-2xl animate-pulse"
-                    style={{ animationDelay: "1s" }}
-                  ></div>
                 </div>
               </SheetContent>
             </Sheet>
