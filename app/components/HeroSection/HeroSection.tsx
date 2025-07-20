@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
@@ -8,9 +11,25 @@ import {
   Target,
   Users,
 } from "lucide-react";
-import React from "react";
 
 const HeroSection = ({ scrollY }: { scrollY: number }) => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkIsDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768); // md breakpoint
+    };
+
+    // Check on mount
+    checkIsDesktop();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", checkIsDesktop);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkIsDesktop);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 z-10">
       <div className="container mx-auto px-4 lg:px-6">
@@ -65,7 +84,9 @@ const HeroSection = ({ scrollY }: { scrollY: number }) => {
                 key={index}
                 className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group"
                 style={{
-                  transform: `translateY(${scrollY * 0.1 * (index + 1)}px)`,
+                  transform: isDesktop
+                    ? `translateY(${scrollY * 0.1 * (index + 1)}px)`
+                    : "none",
                 }}
               >
                 <stat.icon className="h-8 w-8 text-purple-400 mb-3 group-hover:scale-110 transition-transform" />
