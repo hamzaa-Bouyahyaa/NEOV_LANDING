@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import React from "react";
 
-const HeroSection = () => {
+const HeroSection = ({ scrollY }: { scrollY: number }) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 z-10">
       <div className="container mx-auto px-4 lg:px-6">
@@ -74,9 +74,9 @@ const HeroSection = () => {
               <div
                 key={index}
                 className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group"
-                // style={{
-                //   transform: `translateY(${scrollY * 0.1 * (index + 1)}px)`,
-                // }}
+                style={{
+                  transform: `translateY(${scrollY * 0.1 * (index + 1)}px)`,
+                }}
               >
                 <stat.icon className="h-8 w-8 text-purple-400 mb-3 group-hover:scale-110 transition-transform" />
                 <div className="text-3xl font-bold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
