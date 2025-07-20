@@ -22,11 +22,11 @@ const Navbar = () => {
       <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <Link href="#" className="flex items-center space-x-3 cursor-pointer">
             <div>
               <Image src={neovLogo} alt="neov-logo" width={100} height={100} />
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">

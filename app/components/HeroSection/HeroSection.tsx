@@ -31,7 +31,10 @@ const HeroSection = ({ scrollY }: { scrollY: number }) => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 z-10">
+    <section
+      id=""
+      className="relative min-h-screen flex items-center justify-center pt-20 z-10"
+    >
       <div className="container mx-auto px-4 lg:px-6">
         <div className="text-center space-y-8 max-w-5xl mx-auto">
           {/* Main Heading */}
