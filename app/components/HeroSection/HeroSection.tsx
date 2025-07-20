@@ -5,7 +5,6 @@ import {
   Play,
   Rocket,
   Shield,
-  Sparkles,
   Target,
   Users,
 } from "lucide-react";
@@ -16,15 +15,6 @@ const HeroSection = ({ scrollY }: { scrollY: number }) => {
     <section className="relative min-h-screen flex items-center justify-center pt-20 z-10">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="text-center space-y-8 max-w-5xl mx-auto">
-          {/* Floating Badge */}
-          <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 mb-8">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span className="text-sm font-medium">
-              🚀 Crafting Digital Excellence
-            </span>
-            <Sparkles className="h-4 w-4 text-purple-400" />
-          </div>
-
           {/* Main Heading */}
           <div className="space-y-6">
             <h1 className="text-6xl lg:text-8xl font-black leading-tight">

@@ -1,3 +1,4 @@
+"use client";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,10 +11,52 @@ import {
   Users,
 } from "lucide-react";
 import Image from "next/image";
-import React from "react";
-import aboutImage from "@/app/assets/neo-image-1.png";
+import React, { useCallback, useEffect, useRef } from "react";
+import neovImage from "@/app/assets/neo-image-1.png";
+import saudiMapImage from "@/app/assets/saudi-arabia-map.png";
+import worldImage from "@/app/assets/world.png";
+import saudiEventImage from "@/app/assets/saudi-event-img.png";
+import useEmblaCarousel from "embla-carousel-react";
+import "@/app/components/About/index.scss";
 
 const About = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "center",
+    skipSnaps: false,
+  });
+
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Autoplay function
+  const startAutoplay = useCallback(() => {
+    if (!emblaApi) return;
+    stopAutoplay(); // Clear any existing interval
+    autoplayRef.current = setInterval(() => {
+      if (emblaApi) {
+        emblaApi.scrollNext(); // Move to the next slide
+      }
+    }, 2500); // Change slides every 2.5 seconds
+  }, [emblaApi]);
+
+  // Stop autoplay
+  const stopAutoplay = useCallback(() => {
+    if (autoplayRef.current) {
+      clearInterval(autoplayRef.current);
+      autoplayRef.current = null;
+    }
+  }, []);
+
+  useEffect(() => {
+    if (emblaApi) {
+      startAutoplay(); // Start autoplay when emblaApi is ready
+      emblaApi.on("pointerDown", stopAutoplay); // Pause autoplay on user interaction
+      emblaApi.on("pointerUp", startAutoplay); // Resume autoplay after interaction
+    }
+
+    return () => stopAutoplay(); // Cleanup interval on unmount
+  }, [emblaApi, startAutoplay, stopAutoplay]);
+
   return (
     <section id="about" className="relative py-32 z-10">
       <div className="container mx-auto px-4 lg:px-6">
@@ -82,13 +125,23 @@ const About = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-3xl blur-3xl"></div>
             <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8">
-              <Image
-                src={aboutImage}
-                alt="NEOV Innovation Lab"
-                width={600}
-                height={500}
-                className="rounded-2xl shadow-2xl"
-              />
+              <div className="embla" ref={emblaRef}>
+                <div className="embla__container">
+                  {[neovImage, saudiMapImage, worldImage, saudiEventImage].map(
+                    (image, index) => (
+                      <div key={index} className="embla__slide">
+                        <Image
+                          src={image}
+                          alt={`neov-Slide ${index + 1}`}
+                          width={600}
+                          height={500}
+                          className="rounded-2xl shadow-2xl"
+                        />
+                      </div>
+                    )
+                  )}
+                </div>
+              </div>
 
               {/* Floating Stats */}
               <div className="absolute -top-6 -right-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl p-4 shadow-xl">
